@@ -80,6 +80,7 @@ function myFunction(obj) {
     //console.log(obj);
     $(obj).removeClass( "btn-primary" );
     $(obj).addClass( "btn-success" );
+    $(obj).html('Copied Course');
     //console.log($(obj));
       var copyText = document.getElementById($(obj).siblings()[0].id);
       copyText.select();
