@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <p style="font-size: 20px;">Click on the button to copy the text from the text field. Try to paste the text (e.g. ctrl+v) afterwards in a different window, to see the effect.</p>
+
+    <div class="mydiv mt-5">
+    <input type="text" value="" id="myInput">
+    <button class="mybtn btn btn-primary" onclick="myFunction(this)">Copy text</button></div>
+    <br>
+    <div class="mydiv">
+    <input type="text" value="" id="myInput2">
+    <button class="mybtn btn btn-primary" onclick="myFunction(this)">Copy text</button></div>
+    <br>
+    <div class="mydiv">
+    <input type="text" value="" id="myInput3">
+    <button class="mybtn btn btn-primary" onclick="myFunction(this)">Copy text</button></div>
+    <br>
+    <div class="mydiv">
+    <input type="text" value="" id="myInput4">
+    <button class="mybtn btn btn-primary" onclick="myFunction(this)">Copy text</button></div>
+    <br>
+    <div class="mydiv">
+    <input type="text" value="" id="myInput5">
+    <button class="mybtn btn btn-primary" onclick="myFunction(this)">Copy text</button></div>
+    <br>
+    <div class="mydiv">
+    <input type="text" value="" id="myInput6">
+    <button class="mybtn btn btn-primary" onclick="myFunction(this)">Copy text</button></div>
+    <br>
+    <div class="mydiv">
+    <input type="text" value="" id="myInput7">
+    <button class="mybtn btn btn-primary" onclick="myFunction(this)">Copy text</button></div>
+    <br>
+    <div class="mydiv">
+    <input type="text" value="" id="myInput8">
+    <button class="mybtn btn btn-primary" onclick="myFunction(this)">Copy text</button></div>
+    
+    
+    
+    
+ 
+  
+
+  <div class="toast">
+    
+        
+       
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $(".mybtn").click(function(){
+    
+  });
+});
+
+function myFunction(obj) {
+    console.log(obj);
+    $(obj).removeClass( "btn-primary" );
+    $(obj).addClass( "btn-success" );
+    //console.log($(obj));
+      var copyText = document.getElementById($(obj).siblings()[0].id);
+      copyText.select();
+      copyText.setSelectionRange(0, 99999)
+      document.execCommand("copy");
+      //alert("Copied the text: " + id);      
+      $('.toast').html('<a class="btn btn-success mytoast" style="margin-top: 20px;"><h6>Copied</h6><p>'+$(obj).siblings()[0].value+'</p></a>');
+      $('.toast').toast('show');
+    }
+</script>
+
+</body>
+</html>
